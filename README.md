@@ -1,5 +1,5 @@
 ### ZTE T620 (ZTE Blade X3) device tree
-![How it looks](https://apollo-ireland.akamaized.net/v1/files/dq8dw3v9foac3-UA/image;s=644x461)
+![How it looks](https://myzte.ru/upload/iblock/4c6/4c6f04131b2b9bc4cdbeead2ad8de433.jpg)
 
 ## Spec Sheet
 
