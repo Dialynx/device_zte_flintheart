@@ -3,13 +3,13 @@
 #rild.libpath=mtk-ril.so
 #rild.libargs=-d /dev/ttyC0
 
-rild.libpath=/system/lib64/mtk-ril.so
+rild.libpath=/system/lib/mtk-ril.so
 rild.libargs=-d /dev/ttyC0
 
 
 # MTK, Infinity, 20090720 {
 wifi.interface=wlan0
-ro.hardware=mt6737m
+ro.hardware=mt6735p
 # MTK, Infinity, 20090720 }
 
 # MTK, mtk03034, 20101210 {

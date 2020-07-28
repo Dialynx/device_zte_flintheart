@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_x5max_pro.mk
+    $(LOCAL_DIR)/device_flintheart.mk

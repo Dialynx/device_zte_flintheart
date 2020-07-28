@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Example of usage: copy-files.sh /home/decker/hdd/superrs-kitchen/superr_Doogee_x5_Max_Pro/system
+# Example of usage: copy-files.sh /home/user/hdd/superrs-kitchen/superr_zte_flintheart/system
 
-export DEVICE=x5max_pro
-export VENDOR=doogee
+export DEVICE=flintheart
+export VENDOR=zte
 
 if [ $# -eq 0 ]; then
   SRC=adb

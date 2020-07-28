@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DEVICE=x5max_pro
-VENDOR=doogee
+DEVICE=flintheart
+VENDOR=zte
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk

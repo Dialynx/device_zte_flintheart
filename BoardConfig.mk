@@ -1,38 +1,21 @@
 # inherit from the proprietary version
--include vendor/doogee/x5max_pro/BoardConfigVendor.mk
+-include vendor/zte/flintheart/BoardConfigVendor.mk
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := device/doogee/x5max_pro/include
+TARGET_SPECIFIC_HEADER_PATH := device/zte/flintheart/include
 
 # Platform
-TARGET_BOARD_PLATFORM := mt6737m
+TARGET_BOARD_PLATFORM := mt6735p
 TARGET_NO_BOOTLOADER := true
 
-#FORCE_32_BIT = true
+FORCE_32_BIT := true
 
 # Architecture
-ifeq ($(FORCE_32_BIT),true)
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
-else
-TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a53
-
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
-
-# Без нижеследующих трех строк 64-битные компоненты соберутся, однако при старте прошивки все равно
-# будут использоваться 32-битные бинарники. Например, Antutu Benchmark будет отображать 
-# прошивку как 32-битную.
 
 TARGET_CPU_ABI_LIST_64_BIT := $(TARGET_CPU_ABI)
 TARGET_CPU_ABI_LIST_32_BIT := $(TARGET_2ND_CPU_ABI),$(TARGET_2ND_CPU_ABI2)
@@ -44,7 +27,7 @@ TARGET_CPU_ABI_LIST := $(TARGET_CPU_ABI_LIST_64_BIT),$(TARGET_CPU_ABI_LIST_32_BI
 endif
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := mt6737m
+TARGET_BOOTLOADER_BOARD_NAME := mt6735p
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
@@ -62,15 +45,15 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12213288960
 BOARD_CACHEIMAGE_PARTITION_SIZE := 419430400
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/doogee/x5max_pro/kernel
-#BOARD_CUSTOM_BOOTIMG_MK := device/doogee/x5max_pro/bootimg.mk
+TARGET_PREBUILT_KERNEL := device/zte/flintheart/kernel
+#BOARD_CUSTOM_BOOTIMG_MK := device/zte/flintheart/bootimg.mk
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --tags_offset 0x0df88000 --board 1472186745
 BOARD_CUSTOM_BOOTIMG := true
 
 TARGET_KMODULES := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := x5max_pro,x5max_pro_doogee,doogee_x5max_pro,doogee_x5max_pro,"Doogee X5 Max Pro",X5max_PRO,X5MAX_Pro
+TARGET_OTA_ASSERT_DEVICE := zte_t620,zte_zte_t620,ginreen_E169F,zte_flintheart
 
 #COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
@@ -94,7 +77,7 @@ MTK_HARDWARE := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/doogee/x5max_pro/ril/
+BOARD_RIL_CLASS := ../../../device/zte/flintheart/ril/
 
 BOARD_CONNECTIVITY_VENDOR := MediaTek
 BOARD_CONNECTIVITY_MODULE := conn_soc
@@ -114,14 +97,14 @@ WIFI_DRIVER_FW_PATH_P2P:=P2P
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/doogee/x5max_pro/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/zte/flintheart/bluetooth
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # CWM
-TARGET_RECOVERY_FSTAB := device/doogee/x5max_pro/rootdir/root/recovery.fstab
-TARGET_PREBUILT_RECOVERY_KERNEL := device/doogee/x5max_pro/kernel
+TARGET_RECOVERY_FSTAB := device/zte/flintheart/rootdir/root/recovery.fstab
+TARGET_PREBUILT_RECOVERY_KERNEL := device/zte/flintheart/kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP stuff
@@ -143,7 +126,7 @@ TW_USE_TOOLBOX := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun%d/file"
 
 BOARD_SEPOLICY_DIRS := \
-       device/doogee/x5max_pro/sepolicy
+       device/zte/flintheart/sepolicy
 
 # Use old sepolicy version
 POLICYVERS := 29
